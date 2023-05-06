@@ -1,0 +1,6 @@
+pnpm-lock.yaml
+.next
+.swc
+.idea
+public
+node_modules
