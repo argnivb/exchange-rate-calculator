@@ -1,5 +1,5 @@
-import { render, screen } from '@testing-library/react';
 import Home from '@/app/page';
+import { render, screen } from './utils';
 
 describe('Home', () => {
   it('renders a heading', () => {
@@ -10,5 +10,10 @@ describe('Home', () => {
     });
 
     expect(heading).toBeInTheDocument();
+  });
+
+  it('renders Home page unchanged', async () => {
+    const { container } = render(<Home />);
+    expect(container).toMatchSnapshot();
   });
 });
