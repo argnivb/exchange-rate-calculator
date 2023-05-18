@@ -15,8 +15,9 @@ export default function StyledComponentsRegistry({
 
   useServerInsertedHTML(() => {
     const styles = styledComponentsStyleSheet.getStyleElement();
+    // @ts-ignore Due to @types/styled-components lagging behind styled-components
     styledComponentsStyleSheet.instance.clearTag();
-    return <>{styles}</>;
+    return styles;
   });
 
   if (typeof window !== 'undefined') return <>{children}</>;
