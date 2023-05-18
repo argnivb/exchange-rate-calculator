@@ -2,14 +2,25 @@
 
 exports[`Home renders Home page unchanged 1`] = `
 .c0 {
-  padding-top: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 64px;
+  padding-top: 64px;
 }
 
 .c1 {
-  font-family: font-family:fontFamily;
-  font-weight: 700;
+  font-family: fontFamily;
   font-size: 36px;
-  color: #333333;
+  font-weight: 700;
   text-align: center;
 }
 

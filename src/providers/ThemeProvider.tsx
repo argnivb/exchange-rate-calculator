@@ -1,5 +1,7 @@
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
-import { theme } from '@/styles/theme';
+import { base, light } from '@/styles/theme';
+
+export const theme = { ...base, colors: light };
 
 export default function ThemeProvider({
   children,

@@ -3,14 +3,17 @@
 import styled from 'styled-components';
 
 const Container = styled.main`
-  padding-top: ${({ theme }) => theme.spacing.large};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: ${({ theme }) => theme.space[6]};
+  padding-top: ${({ theme }) => theme.space[6]};
 `;
 
 const Heading = styled.h1`
-  font-family: ${({ theme }) => theme.typography.fonts.heading};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
-  font-size: ${({ theme }) => theme.typography.fontSizes.xlarge};
-  color: ${({ theme }) => theme.colors.text};
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: ${({ theme }) => theme.fontSizes[5]};
+  font-weight: ${({ theme }) => theme.fontWeights.heading};
   text-align: center;
 `;
 
