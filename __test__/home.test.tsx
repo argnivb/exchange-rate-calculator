@@ -6,10 +6,19 @@ describe('Home', () => {
     render(<Home />);
 
     const heading = screen.getByRole('heading', {
-      name: /Welcome to Next\.js 13/i,
+      name: /Exchange Rate Calculator/i,
     });
 
     expect(heading).toBeInTheDocument();
+  });
+
+  it('renders ExchangeRateCalculator', () => {
+    render(<Home />);
+
+    const exchangeRateCalculatorElement = screen.getByTestId(
+      'exchange-rate-calculator'
+    );
+    expect(exchangeRateCalculatorElement).toBeInTheDocument();
   });
 
   it('renders Home page unchanged', async () => {

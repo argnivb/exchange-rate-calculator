@@ -1,6 +1,113 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home renders Home page unchanged 1`] = `
+.c2 {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 374px;
+}
+
+.c3 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-radius: 30px;
+  padding: 32px;
+  padding-bottom: 64px;
+  margin-bottom: 128px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 12px #D8EBFF;
+}
+
+.c4 {
+  font-family: fontFamily;
+  font-weight: 700;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.c5 {
+  font-family: fontFamily;
+  font-weight: 700;
+  font-size: 24px;
+  background-color: #fff;
+  outline: none;
+  border: 1px solid #e5e5e5;
+  border-radius: 30px;
+  padding: 16px 32px;
+  width: 100%;
+}
+
+.c5:focus-visible {
+  border-color: #1E90FF;
+}
+
+.c6 {
+  position: absolute;
+  bottom: -1.8rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #1E90FF;
+  color: #fff;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  border: 1px solid rgba(0,0,0,0);
+  border-radius: 30px;
+  outline: none;
+  font-family: fontFamily;
+  font-weight: 700;
+  font-size: 24px;
+  padding: 16px 32px;
+}
+
+.c6:hover {
+  background-color: #0066CC;
+}
+
+.c6:focus-visible {
+  outline: 1px solid #1E90FF;
+  outline-offset: 0.125rem;
+}
+
+.c6:active {
+  background-color: #1E90FF;
+}
+
+.c6:disabled {
+  background-color: #aaaaaa;
+}
+
+.c6:disabled,
+.c6:disabled:hover {
+  cursor: default;
+}
+
+.c7 {
+  font-family: fontFamily;
+  font-weight: 700;
+  font-size: 48px;
+  text-align: center;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -31,8 +138,49 @@ exports[`Home renders Home page unchanged 1`] = `
     <h1
       class="c1"
     >
-      Welcome to Next.js 13
+      Exchange Rate Calculator
     </h1>
+    <div
+      class="c2"
+      data-testid="exchange-rate-calculator"
+    >
+      <form>
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <p>
+              USD
+            </p>
+            <span>
+              to
+            </span>
+            <p>
+              EUR
+            </p>
+          </div>
+          <input
+            class="c5"
+            name="quantity"
+            placeholder="Amount"
+            type="text"
+          />
+          <button
+            class="c6"
+            type="submit"
+          >
+            Convert
+          </button>
+        </div>
+      </form>
+      <p
+        class="c7"
+      >
+        18825.10
+      </p>
+    </div>
   </main>
 </div>
 `;

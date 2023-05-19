@@ -1,6 +1,7 @@
 'use client';
 
 import styled from 'styled-components';
+import ExchangeRateCalculator from '@/components/exchangeRateCalculator';
 
 const Container = styled.main`
   display: flex;
@@ -20,7 +21,8 @@ const Heading = styled.h1`
 export default function Home() {
   return (
     <Container>
-      <Heading>Welcome to Next.js 13</Heading>
+      <Heading>Exchange Rate Calculator</Heading>
+      <ExchangeRateCalculator />
     </Container>
   );
 }
