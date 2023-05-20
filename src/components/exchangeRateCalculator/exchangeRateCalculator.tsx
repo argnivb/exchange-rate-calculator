@@ -1,4 +1,9 @@
+import CurrencySelect from '../currencySelect';
 import * as S from './styles';
+
+// Need Static Id Because Of Rehidratation Failure Warring
+const currencySelectFromId = 'currencySelectFrom';
+const currencySelectToId = 'currencySelectTo';
 
 export const ExchangeRateCalculator = () => {
   return (
@@ -11,9 +16,9 @@ export const ExchangeRateCalculator = () => {
       >
         <S.Card>
           <S.CurrenciesWrapper>
-            <p>USD</p>
+            <CurrencySelect id={currencySelectFromId} name="currencyFrom" />
             <span>to</span>
-            <p>EUR</p>
+            <CurrencySelect id={currencySelectToId} name="currencyTo" />
           </S.CurrenciesWrapper>
           <S.AmountInput type="text" name="quantity" placeholder="Amount" />
           <S.Button type="submit">Convert</S.Button>
