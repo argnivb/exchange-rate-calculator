@@ -38,10 +38,14 @@ export const AmountInput = styled.input`
   border-radius: ${({ theme }) => theme.radius.rounded};
   padding: ${({ theme }) => `${theme.space[4]} ${theme.space[5]}`};
   width: 100%;
-
   &:focus-visible {
     border-color: ${({ theme }) => theme.colors.primary};
   }
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none;
+  }
+  appearance: textfield;
 `;
 
 export const Button = styled.button`

@@ -7,7 +7,9 @@ const currencies = [
   { value: 'cad', label: 'CAD' },
 ];
 
-export const CurrencySelect = ({ id, theme, ...props }: Props) => {
+interface CurrencySelectProps extends Props {}
+
+export const CurrencySelect = ({ id, name, theme, ...props }: Props) => {
   return (
     <StyledSelect
       instanceId={id}
@@ -17,5 +19,7 @@ export const CurrencySelect = ({ id, theme, ...props }: Props) => {
     />
   );
 };
+
+CurrencySelect.displayName = 'CurrencySelect';
 
 export default CurrencySelect;
