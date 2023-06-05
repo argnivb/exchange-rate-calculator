@@ -4,6 +4,7 @@ import { useCallback } from 'react';
 import CurrencySelect from '../currencySelect';
 import * as S from './styles';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
+import ConvertButton from '../convertButton';
 
 // Need Static Id Because Of Rehidratation Failure Warring
 const currencySelectFromId = 'currencySelectFrom';
@@ -23,7 +24,7 @@ export const ExchangeRateCalculator = () => {
   const {
     register,
     handleSubmit,
-    formState: { isValid },
+    formState: { isValid, isSubmitting, isDirty },
     control,
   } = useForm({
     defaultValues,
@@ -36,7 +37,7 @@ export const ExchangeRateCalculator = () => {
 
   return (
     <S.Container data-testid="exchange-rate-calculator">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
         <S.Card>
           <S.CurrenciesWrapper>
             <Controller
@@ -66,14 +67,10 @@ export const ExchangeRateCalculator = () => {
               pattern: currencyPattern,
             })}
           />
-
-          {/* has to be like this becouse of server and client miss match */}
-          {isValid && <S.Button type="submit">Convert</S.Button>}
-          {!isValid && (
-            <S.Button type="submit" disabled>
-              Convert
-            </S.Button>
-          )}
+          <ConvertButton
+            loading={isSubmitting}
+            disabled={!isValid || !isDirty || isSubmitting}
+          />
         </S.Card>
       </form>
       <S.ExchangeRateResult>18825.10</S.ExchangeRateResult>
