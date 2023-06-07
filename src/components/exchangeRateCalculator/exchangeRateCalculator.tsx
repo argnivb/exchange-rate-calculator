@@ -4,6 +4,7 @@ import { useCallback } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import CurrencySelect from '../currencySelect';
 import ConvertButton from '../convertButton';
+import ExchangeRateResult from '../exchangeRateResult';
 import * as S from './styles';
 
 const currencyPattern = /^(?!0+(?:\.0+)?$)(?:[1-9]\d*|0)(?:\.\d{1,2})?$/;
@@ -22,6 +23,7 @@ export const ExchangeRateCalculator = () => {
     handleSubmit,
     formState: { isValid, isSubmitting, isDirty },
     control,
+    getValues,
   } = useForm({
     defaultValues,
   });
@@ -55,7 +57,14 @@ export const ExchangeRateCalculator = () => {
           />
         </S.Card>
       </form>
-      <S.ExchangeRateResult>18825.10</S.ExchangeRateResult>
+
+      <ExchangeRateResult
+        loading={isSubmitting}
+        currencyFrom={getValues('currencyFrom').label}
+        currencyTo={getValues('currencyTo').label}
+        amount={getValues('amount')}
+        exchangeResult={{ rate: 1.5, result: 18825.12 }}
+      />
     </S.Container>
   );
 };

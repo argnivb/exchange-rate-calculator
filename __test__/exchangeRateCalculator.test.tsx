@@ -23,7 +23,7 @@ describe('ExchangeRateCalculator', () => {
   it('renders exchange rate result', () => {
     render(<ExchangeRateCalculator />);
 
-    const exchangeRateResultElement = screen.getByText('18825.10');
+    const exchangeRateResultElement = screen.getByText('18825.12');
     expect(exchangeRateResultElement).toBeInTheDocument();
   });
 });

@@ -1,35 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home renders Home page unchanged 1`] = `
-.c5 .select__control {
-  padding: 4px 8px;
+.c6 {
+  position: absolute;
+  bottom: -1.8rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #1E90FF;
+  color: #fff;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  border: 1px solid rgba(0,0,0,0);
   border-radius: 30px;
-  border: none;
-  width: 120px;
+  outline: none;
+  font-family: fontFamily;
+  font-weight: 700;
+  font-size: 24px;
+  padding: 16px 32px;
 }
 
-.c5 .select__indicator-separator {
-  display: none;
+.c6:hover {
+  background-color: #0066CC;
 }
 
-.c5 .select__menu {
-  overflow: hidden;
-  border-radius: 30px;
+.c6:focus-visible {
+  outline: 1px solid #1E90FF;
+  outline-offset: 0.125rem;
 }
 
-.c5 .select__menu-list {
-  padding: 0;
+.c6:active {
+  background-color: #1E90FF;
 }
 
-.c5 .select__option {
+.c6:disabled {
+  background-color: #aaaaaa;
+}
+
+.c6:disabled,
+.c6:disabled:hover {
+  cursor: default;
+}
+
+.c7 {
+  font-family: fontFamily;
+  font-weight: 700;
+  font-size: 48px;
   text-align: center;
-  width: 100%;
+}
+
+.c7 p {
+  display: inline-block;
+}
+
+.c7 span:nth-child(2) {
+  color: #aaaaaa;
+}
+
+.c8 {
+  font-family: fontFamily;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  color: #aaaaaa;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
-  max-width: 374px;
 }
 
 .c3 {
@@ -47,6 +97,7 @@ exports[`Home renders Home page unchanged 1`] = `
   margin-bottom: 128px;
   background-color: #ffffff;
   box-shadow: 0 1px 12px #D8EBFF;
+  max-width: 374px;
 }
 
 .c4 {
@@ -68,7 +119,7 @@ exports[`Home renders Home page unchanged 1`] = `
   margin-bottom: 32px;
 }
 
-.c6 {
+.c5 {
   font-family: fontFamily;
   font-weight: 700;
   font-size: 24px;
@@ -78,59 +129,20 @@ exports[`Home renders Home page unchanged 1`] = `
   border-radius: 30px;
   padding: 16px 32px;
   width: 100%;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
-.c6:focus-visible {
+.c5:focus-visible {
   border-color: #1E90FF;
 }
 
-.c7 {
-  position: absolute;
-  bottom: -1.8rem;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  background-color: #1E90FF;
-  color: #fff;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-  border: 1px solid rgba(0,0,0,0);
-  border-radius: 30px;
-  outline: none;
-  font-family: fontFamily;
-  font-weight: 700;
-  font-size: 24px;
-  padding: 16px 32px;
-}
-
-.c7:hover {
-  background-color: #0066CC;
-}
-
-.c7:focus-visible {
-  outline: 1px solid #1E90FF;
-  outline-offset: 0.125rem;
-}
-
-.c7:active {
-  background-color: #1E90FF;
-}
-
-.c7:disabled {
-  background-color: #aaaaaa;
-}
-
-.c7:disabled,
-.c7:disabled:hover {
-  cursor: default;
-}
-
-.c8 {
-  font-family: fontFamily;
-  font-weight: 700;
-  font-size: 48px;
-  text-align: center;
+.c5::-webkit-inner-spin-button,
+.c5::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .c0 {
@@ -169,7 +181,9 @@ exports[`Home renders Home page unchanged 1`] = `
       class="c2"
       data-testid="exchange-rate-calculator"
     >
-      <form>
+      <form
+        autocomplete="off"
+      >
         <div
           class="c3"
         >
@@ -177,11 +191,11 @@ exports[`Home renders Home page unchanged 1`] = `
             class="c4"
           >
             <div
-              class="c5 css-b62m3t-container"
+              class=" css-b62m3t-container"
             >
               <span
                 class="css-1f43avz-a11yText-A11yText"
-                id="react-select-currencySelectFrom-live-region"
+                id="react-select-currencyFrom-live-region"
               />
               <span
                 aria-atomic="false"
@@ -190,18 +204,18 @@ exports[`Home renders Home page unchanged 1`] = `
                 class="css-1f43avz-a11yText-A11yText"
               />
               <div
-                class="select__control css-13cymwt-control"
+                class=" css-1w3owpa-control"
               >
                 <div
-                  class="select__value-container select__value-container--has-value css-1fdsijx-ValueContainer"
+                  class=" css-1fdsijx-ValueContainer"
                 >
                   <div
-                    class="select__single-value css-1dimb5e-singleValue"
+                    class=" css-1dimb5e-singleValue"
                   >
                     USD
                   </div>
                   <div
-                    class="select__input-container css-qbdosj-Input"
+                    class=" css-qbdosj-Input"
                     data-value=""
                   >
                     <input
@@ -211,8 +225,8 @@ exports[`Home renders Home page unchanged 1`] = `
                       autocapitalize="none"
                       autocomplete="off"
                       autocorrect="off"
-                      class="select__input"
-                      id="react-select-currencySelectFrom-input"
+                      class=""
+                      id="currencyFrom"
                       role="combobox"
                       spellcheck="false"
                       style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
@@ -223,14 +237,14 @@ exports[`Home renders Home page unchanged 1`] = `
                   </div>
                 </div>
                 <div
-                  class="select__indicators css-1hb7zxy-IndicatorsContainer"
+                  class=" css-1hb7zxy-IndicatorsContainer"
                 >
                   <span
-                    class="select__indicator-separator css-1u9des2-indicatorSeparator"
+                    class=" css-1xjgjl1-IndicatorSeparator"
                   />
                   <div
                     aria-hidden="true"
-                    class="select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer"
+                    class=" css-1xc3v61-indicatorContainer"
                   >
                     <svg
                       aria-hidden="true"
@@ -257,11 +271,11 @@ exports[`Home renders Home page unchanged 1`] = `
               to
             </span>
             <div
-              class="c5 css-b62m3t-container"
+              class=" css-b62m3t-container"
             >
               <span
                 class="css-1f43avz-a11yText-A11yText"
-                id="react-select-currencySelectTo-live-region"
+                id="react-select-currencyTo-live-region"
               />
               <span
                 aria-atomic="false"
@@ -270,18 +284,18 @@ exports[`Home renders Home page unchanged 1`] = `
                 class="css-1f43avz-a11yText-A11yText"
               />
               <div
-                class="select__control css-13cymwt-control"
+                class=" css-1w3owpa-control"
               >
                 <div
-                  class="select__value-container select__value-container--has-value css-1fdsijx-ValueContainer"
+                  class=" css-1fdsijx-ValueContainer"
                 >
                   <div
-                    class="select__single-value css-1dimb5e-singleValue"
+                    class=" css-1dimb5e-singleValue"
                   >
                     USD
                   </div>
                   <div
-                    class="select__input-container css-qbdosj-Input"
+                    class=" css-qbdosj-Input"
                     data-value=""
                   >
                     <input
@@ -291,8 +305,8 @@ exports[`Home renders Home page unchanged 1`] = `
                       autocapitalize="none"
                       autocomplete="off"
                       autocorrect="off"
-                      class="select__input"
-                      id="react-select-currencySelectTo-input"
+                      class=""
+                      id="currencyTo"
                       role="combobox"
                       spellcheck="false"
                       style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
@@ -303,14 +317,14 @@ exports[`Home renders Home page unchanged 1`] = `
                   </div>
                 </div>
                 <div
-                  class="select__indicators css-1hb7zxy-IndicatorsContainer"
+                  class=" css-1hb7zxy-IndicatorsContainer"
                 >
                   <span
-                    class="select__indicator-separator css-1u9des2-indicatorSeparator"
+                    class=" css-1xjgjl1-IndicatorSeparator"
                   />
                   <div
                     aria-hidden="true"
-                    class="select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer"
+                    class=" css-1xc3v61-indicatorContainer"
                   >
                     <svg
                       aria-hidden="true"
@@ -335,24 +349,45 @@ exports[`Home renders Home page unchanged 1`] = `
             </div>
           </div>
           <input
-            class="c6"
-            name="quantity"
+            class="c5"
+            name="amount"
             placeholder="Amount"
-            type="text"
+            step="0.01"
+            type="number"
           />
           <button
-            class="c7"
+            class="c6"
+            disabled=""
             type="submit"
           >
             Convert
           </button>
         </div>
       </form>
-      <p
-        class="c8"
-      >
-        18825.10
-      </p>
+      <div>
+        <div
+          class="c7"
+          data-testid="exchangeResult"
+        >
+          <p>
+            18825.12
+          </p>
+          <span>
+             
+            USD
+          </span>
+        </div>
+        <p
+          class="c8"
+        >
+           
+          USD
+           * 
+          1.5
+           
+          USD
+        </p>
+      </div>
     </div>
   </main>
 </div>

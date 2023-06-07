@@ -3,9 +3,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
-  max-width: 374px;
 `;
 
 export const Card = styled.div`
@@ -18,6 +20,7 @@ export const Card = styled.div`
   margin-bottom: ${({ theme }) => theme.space[7]};
   background-color: ${({ theme }) => theme.colors.background};
   box-shadow: 0 1px 12px ${({ theme }) => theme.colors.primaryLight};
+  max-width: 374px;
 `;
 
 export const CurrenciesWrapper = styled.div`
@@ -48,11 +51,4 @@ export const AmountInput = styled.input`
     appearance: none;
   }
   appearance: textfield;
-`;
-
-export const ExchangeRateResult = styled.p`
-  font-family: ${({ theme }) => theme.fonts.body};
-  font-weight: ${({ theme }) => theme.fontWeights.heading};
-  font-size: ${({ theme }) => theme.fontSizes[6]};
-  text-align: center;
 `;
