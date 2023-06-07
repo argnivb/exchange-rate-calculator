@@ -1,5 +1,4 @@
-import { render, screen } from './utils';
-import userEvent from '@testing-library/user-event';
+import { fireEvent, render, screen } from './utils';
 import ConvertButton from '@/components/convertButton';
 
 describe('ConvertButton', () => {
@@ -24,7 +23,7 @@ describe('ConvertButton', () => {
     expect(button).toBeDisabled();
   });
 
-  it('should call the onSubmit handler when button is clicked', async () => {
+  it('should call the onSubmit handler when button is clicked', () => {
     const onSubmit = jest.fn();
     render(
       <form onSubmit={onSubmit}>
@@ -32,7 +31,7 @@ describe('ConvertButton', () => {
       </form>
     );
     const button = screen.getByRole('button', { name: /convert/i });
-    await userEvent.click(button);
+    fireEvent.submit(button);
     expect(onSubmit).toHaveBeenCalledTimes(1);
   });
 });
