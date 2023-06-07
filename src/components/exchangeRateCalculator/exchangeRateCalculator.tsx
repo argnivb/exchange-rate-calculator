@@ -1,14 +1,10 @@
 'use client';
 
 import { useCallback } from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import CurrencySelect from '../currencySelect';
-import * as S from './styles';
-import { useForm, Controller, SubmitHandler } from 'react-hook-form';
 import ConvertButton from '../convertButton';
-
-// Need Static Id Because Of Rehidratation Failure Warring
-const currencySelectFromId = 'currencySelectFrom';
-const currencySelectToId = 'currencySelectTo';
+import * as S from './styles';
 
 const currencyPattern = /^(?!0+(?:\.0+)?$)(?:[1-9]\d*|0)(?:\.\d{1,2})?$/;
 
@@ -18,7 +14,7 @@ const defaultValues = {
   amount: '',
 };
 
-type FormValues = typeof defaultValues;
+export type FormValues = typeof defaultValues;
 
 export const ExchangeRateCalculator = () => {
   const {
@@ -40,23 +36,9 @@ export const ExchangeRateCalculator = () => {
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
         <S.Card>
           <S.CurrenciesWrapper>
-            <Controller
-              control={control}
-              name="currencyFrom"
-              rules={{ required: true }}
-              render={({ field: { ref, ...fieldProps } }) => (
-                <CurrencySelect id={currencySelectFromId} {...fieldProps} />
-              )}
-            />
+            <CurrencySelect name="currencyFrom" control={control} />
             <span>to</span>
-            <Controller
-              control={control}
-              name="currencyTo"
-              rules={{ required: true }}
-              render={({ field: { ref, ...fieldProps } }) => (
-                <CurrencySelect id={currencySelectToId} {...fieldProps} />
-              )}
-            />
+            <CurrencySelect name="currencyTo" control={control} />
           </S.CurrenciesWrapper>
           <S.AmountInput
             type="number"

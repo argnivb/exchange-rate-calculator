@@ -1,2 +1,2 @@
-export { ExchangeRateCalculator } from './exchangeRateCalculator';
+export * from './exchangeRateCalculator';
 export { default } from './exchangeRateCalculator';
