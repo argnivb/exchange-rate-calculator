@@ -7,13 +7,24 @@ import selectEvent from 'react-select-event';
 const MockCurrencySelect = () => {
   const { control } = useForm<FormValues>({
     defaultValues: {
-      currencyFrom: { label: 'USD', value: 'usd' },
+      currencyFrom: { label: 'USD', value: 'USD' },
     },
   });
+
+  const currencies = [
+    { value: 'USD', label: 'USD' },
+    { value: 'EUR', label: 'EUR' },
+    { value: 'CAD', label: 'CAD' },
+  ];
+
   return (
     <form data-testid="form">
       <label htmlFor="currencyFrom">Currency</label>
-      <CurrencySelect name="currencyFrom" control={control} />
+      <CurrencySelect
+        name="currencyFrom"
+        control={control}
+        options={currencies}
+      />
     </form>
   );
 };
@@ -23,7 +34,7 @@ describe('CurrencySelect', () => {
     render(<MockCurrencySelect />);
 
     expect(screen.getByTestId('form')).toHaveFormValues({
-      currencyFrom: 'usd',
+      currencyFrom: 'USD',
     });
   });
 
@@ -32,7 +43,7 @@ describe('CurrencySelect', () => {
 
     await selectEvent.select(screen.getByLabelText('Currency'), 'EUR');
     expect(screen.getByTestId('form')).toHaveFormValues({
-      currencyFrom: 'eur',
+      currencyFrom: 'EUR',
     });
   });
 

@@ -5,15 +5,15 @@ import { UseControllerProps, useController } from 'react-hook-form';
 import { FormValues } from '@/components/exchangeRateCalculator';
 import { useTheme } from 'styled-components';
 
-const currencies = [
-  { value: 'usd', label: 'USD' },
-  { value: 'eur', label: 'EUR' },
-  { value: 'cad', label: 'CAD' },
-];
+export interface Currency {
+  value: string;
+  label: string;
+}
+interface CurrencySelectProps extends UseControllerProps<FormValues> {
+  options: Currency[];
+}
 
-interface CurrencySelectProps extends UseControllerProps<FormValues> {}
-
-export const CurrencySelect = (props: CurrencySelectProps) => {
+export const CurrencySelect = ({ options, ...props }: CurrencySelectProps) => {
   const styledTheme = useTheme();
   const { field } = useController({ rules: { required: true }, ...props });
 
@@ -45,7 +45,7 @@ export const CurrencySelect = (props: CurrencySelectProps) => {
     <Select
       inputId={field.name}
       instanceId={field.name}
-      options={currencies}
+      options={options}
       {...field}
       theme={(theme) => ({
         ...theme,

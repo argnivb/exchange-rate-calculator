@@ -2,8 +2,18 @@ import Home from '@/app/page';
 import { render, screen } from './utils';
 
 describe('Home', () => {
-  it('renders a heading', () => {
-    render(<Home />);
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it('renders a heading', async () => {
+    const mockFetchPromise = Promise.resolve({
+      json: () => Promise.resolve({ symbols: {} }),
+    });
+
+    global.fetch = jest.fn().mockImplementation(() => mockFetchPromise);
+
+    render(await Home());
 
     const heading = screen.getByRole('heading', {
       name: /Exchange Rate Calculator/i,
@@ -12,8 +22,8 @@ describe('Home', () => {
     expect(heading).toBeInTheDocument();
   });
 
-  it('renders ExchangeRateCalculator', () => {
-    render(<Home />);
+  it('renders ExchangeRateCalculator', async () => {
+    render(await Home());
 
     const exchangeRateCalculatorElement = screen.getByTestId(
       'exchange-rate-calculator'
@@ -22,7 +32,7 @@ describe('Home', () => {
   });
 
   it('renders Home page unchanged', async () => {
-    const { container } = render(<Home />);
+    const { container } = render(await Home());
     expect(container).toMatchSnapshot();
   });
 });

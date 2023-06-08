@@ -157,6 +157,10 @@ exports[`Home renders Home page unchanged 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 64px;
   padding-top: 64px;
 }
@@ -264,7 +268,7 @@ exports[`Home renders Home page unchanged 1`] = `
               <input
                 name="currencyFrom"
                 type="hidden"
-                value="usd"
+                value="USD"
               />
             </div>
             <span>
@@ -292,7 +296,7 @@ exports[`Home renders Home page unchanged 1`] = `
                   <div
                     class=" css-1dimb5e-singleValue"
                   >
-                    USD
+                    EUR
                   </div>
                   <div
                     class=" css-qbdosj-Input"
@@ -344,7 +348,7 @@ exports[`Home renders Home page unchanged 1`] = `
               <input
                 name="currencyTo"
                 type="hidden"
-                value="usd"
+                value="EUR"
               />
             </div>
           </div>
@@ -374,7 +378,7 @@ exports[`Home renders Home page unchanged 1`] = `
           </p>
           <span>
              
-            USD
+            EUR
           </span>
         </div>
         <p
@@ -385,7 +389,7 @@ exports[`Home renders Home page unchanged 1`] = `
            * 
           1.5
            
-          USD
+          EUR
         </p>
       </div>
     </div>

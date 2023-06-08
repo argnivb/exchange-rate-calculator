@@ -1,28 +1,14 @@
-'use client';
-
-import styled from 'styled-components';
+import { getCurrencies } from '@/api';
 import ExchangeRateCalculator from '@/components/exchangeRateCalculator';
+import * as S from './styles';
 
-const Container = styled.main`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: ${({ theme }) => theme.space[6]};
-  padding-top: ${({ theme }) => theme.space[6]};
-`;
+export default async function Home() {
+  const { data } = await getCurrencies();
 
-const Heading = styled.h1`
-  font-family: ${({ theme }) => theme.fonts.body};
-  font-size: ${({ theme }) => theme.fontSizes[5]};
-  font-weight: ${({ theme }) => theme.fontWeights.heading};
-  text-align: center;
-`;
-
-export default function Home() {
   return (
-    <Container>
-      <Heading>Exchange Rate Calculator</Heading>
-      <ExchangeRateCalculator />
-    </Container>
+    <S.Container>
+      <S.Heading>Exchange Rate Calculator</S.Heading>
+      <ExchangeRateCalculator currencies={data} />
+    </S.Container>
   );
 }

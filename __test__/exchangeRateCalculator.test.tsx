@@ -1,9 +1,11 @@
 import ExchangeRateCalculator from '@/components/exchangeRateCalculator';
 import { render, screen } from './utils';
 
+const currencies = ['USD', 'EUR', 'CAD'];
+
 describe('ExchangeRateCalculator', () => {
   it('renders CurrencySelect from and To', () => {
-    render(<ExchangeRateCalculator />);
+    render(<ExchangeRateCalculator currencies={currencies} />);
 
     const currencySelects = screen.getAllByRole('combobox');
 
@@ -12,7 +14,7 @@ describe('ExchangeRateCalculator', () => {
   });
 
   it('renders input fields', () => {
-    render(<ExchangeRateCalculator />);
+    render(<ExchangeRateCalculator currencies={currencies} />);
 
     const amountInputElement = screen.getByPlaceholderText('Amount');
     const submitButtonElement = screen.getByRole('button', { name: 'Convert' });
@@ -21,7 +23,7 @@ describe('ExchangeRateCalculator', () => {
   });
 
   it('renders exchange rate result', () => {
-    render(<ExchangeRateCalculator />);
+    render(<ExchangeRateCalculator currencies={currencies} />);
 
     const exchangeRateResultElement = screen.getByText('18825.12');
     expect(exchangeRateResultElement).toBeInTheDocument();

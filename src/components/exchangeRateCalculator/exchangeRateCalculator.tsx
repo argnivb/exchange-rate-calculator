@@ -10,14 +10,21 @@ import * as S from './styles';
 const currencyPattern = /^(?!0+(?:\.0+)?$)(?:[1-9]\d*|0)(?:\.\d{1,2})?$/;
 
 const defaultValues = {
-  currencyFrom: { label: 'USD', value: 'usd' },
-  currencyTo: { label: 'USD', value: 'usd' },
+  currencyFrom: { label: 'USD', value: 'USD' },
+  currencyTo: { label: 'EUR', value: 'EUR' },
   amount: '',
 };
 
 export type FormValues = typeof defaultValues;
 
-export const ExchangeRateCalculator = () => {
+const currenciesToOptions = (currencies: string[]) =>
+  currencies.map((currency) => ({ label: currency, value: currency }));
+
+export const ExchangeRateCalculator = ({
+  currencies,
+}: {
+  currencies: string[];
+}) => {
   const {
     register,
     handleSubmit,
@@ -33,14 +40,24 @@ export const ExchangeRateCalculator = () => {
     []
   );
 
+  const currencyOptions = currenciesToOptions(currencies);
+
   return (
     <S.Container data-testid="exchange-rate-calculator">
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
         <S.Card>
           <S.CurrenciesWrapper>
-            <CurrencySelect name="currencyFrom" control={control} />
+            <CurrencySelect
+              name="currencyFrom"
+              control={control}
+              options={currencyOptions}
+            />
             <span>to</span>
-            <CurrencySelect name="currencyTo" control={control} />
+            <CurrencySelect
+              name="currencyTo"
+              control={control}
+              options={currencyOptions}
+            />
           </S.CurrenciesWrapper>
           <S.AmountInput
             type="number"
