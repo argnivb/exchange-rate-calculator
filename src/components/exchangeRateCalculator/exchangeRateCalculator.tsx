@@ -1,10 +1,11 @@
 'use client';
 
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import CurrencySelect from '../currencySelect';
 import ConvertButton from '../convertButton';
 import ExchangeRateResult from '../exchangeRateResult';
+import { convertCurrency } from '@/api';
 import * as S from './styles';
 
 const currencyPattern = /^(?!0+(?:\.0+)?$)(?:[1-9]\d*|0)(?:\.\d{1,2})?$/;
@@ -35,8 +36,22 @@ export const ExchangeRateCalculator = ({
     defaultValues,
   });
 
+  const [exchangeResult, setExchangeResult] = useState<{
+    result: number;
+    rate: number;
+  } | null>(null);
+
   const onSubmit: SubmitHandler<FormValues> = useCallback(
-    (data) => console.log(data),
+    async (formValues) => {
+      const { currencyFrom, currencyTo, amount } = formValues;
+      const { data } = await convertCurrency(
+        currencyFrom.value,
+        currencyTo.value,
+        amount
+      );
+
+      setExchangeResult(data);
+    },
     []
   );
 
@@ -80,7 +95,7 @@ export const ExchangeRateCalculator = ({
         currencyFrom={getValues('currencyFrom').label}
         currencyTo={getValues('currencyTo').label}
         amount={getValues('amount')}
-        exchangeResult={{ rate: 1.5, result: 18825.12 }}
+        exchangeResult={exchangeResult}
       />
     </S.Container>
   );

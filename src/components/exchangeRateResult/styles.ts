@@ -21,3 +21,10 @@ export const ExchangeRate = styled.p`
   text-align: center;
   color: ${({ theme }) => theme.colors.grey};
 `;
+
+export const LoaderContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: ${({ theme }) => theme.space[4]};
+`;

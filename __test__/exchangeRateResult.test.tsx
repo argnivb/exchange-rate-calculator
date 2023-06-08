@@ -39,8 +39,8 @@ describe('ExchangeRateResult', () => {
     expect(container.firstChild).toBeNull();
   });
 
-  it('does not render anything if loading is true', () => {
-    const { container } = render(
+  it('renders a loader if loading is true', () => {
+    render(
       <ExchangeRateResult
         loading={true}
         exchangeResult={mockExchangeResult}
@@ -50,6 +50,7 @@ describe('ExchangeRateResult', () => {
       />
     );
 
-    expect(container.firstChild).toBeNull();
+    const loaderElement = screen.getByTestId('loader');
+    expect(loaderElement).toBeInTheDocument();
   });
 });

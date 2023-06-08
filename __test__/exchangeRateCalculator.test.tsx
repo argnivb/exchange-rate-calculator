@@ -22,10 +22,12 @@ describe('ExchangeRateCalculator', () => {
     expect(submitButtonElement).toBeInTheDocument();
   });
 
-  it('renders exchange rate result', () => {
+  it('does not render exchange rate result initially', () => {
     render(<ExchangeRateCalculator currencies={currencies} />);
 
-    const exchangeRateResultElement = screen.getByText('18825.12');
-    expect(exchangeRateResultElement).toBeInTheDocument();
+    const exchangeRateResultElement = screen.getByTestId(
+      'exchange-rate-calculator'
+    );
+    expect(exchangeRateResultElement.childElementCount).toBe(1);
   });
 });

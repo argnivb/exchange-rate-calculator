@@ -1,3 +1,4 @@
+import SkeletonLoader from '../skeletonLoader';
 import * as S from './styles';
 
 interface ExchangeRateResultProps {
@@ -34,7 +35,16 @@ export const ExchangeRateResult = ({
   currencyTo,
   amount,
 }: ExchangeRateResultProps) => {
-  if (!exchangeResult || loading) {
+  if (loading) {
+    return (
+      <S.LoaderContainer data-testid="loader">
+        <SkeletonLoader w={18} h={4} />
+        <SkeletonLoader w={14} h={2} />
+      </S.LoaderContainer>
+    );
+  }
+
+  if (!exchangeResult) {
     return null;
   }
 
@@ -42,8 +52,8 @@ export const ExchangeRateResult = ({
   const { formattedResult, decimalPartRest } = formatExchangeResult(result);
 
   return (
-    <div>
-      <S.ExchangeResult data-testid="exchangeResult">
+    <div data-testid="exchangeResult">
+      <S.ExchangeResult>
         <p>{formattedResult}</p>
         {decimalPartRest && <span>{decimalPartRest}</span>}
         <span> {currencyTo}</span>
