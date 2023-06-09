@@ -1,6 +1,10 @@
 import Home from '@/app/page';
 import { render, screen } from './utils';
 
+jest.mock('../src/api/convertCurrency', () => ({
+  convertCurrency: jest.fn().mockResolvedValueOnce({}),
+}));
+
 describe('Home', () => {
   afterEach(() => {
     jest.clearAllMocks();

@@ -1,6 +1,10 @@
 import ExchangeRateCalculator from '@/components/exchangeRateCalculator';
 import { render, screen } from './utils';
 
+jest.mock('../src/api/convertCurrency', () => ({
+  convertCurrency: jest.fn().mockResolvedValueOnce({}),
+}));
+
 const currencies = ['USD', 'EUR', 'CAD'];
 
 describe('ExchangeRateCalculator', () => {

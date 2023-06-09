@@ -1,6 +1,8 @@
+'use server';
+
 import { apiKey, apiUrl } from './constants';
 
-interface convertResponse {
+interface ConvertResponse {
   date: string;
   info: {
     rate: number;
@@ -15,6 +17,11 @@ interface convertResponse {
   success: boolean;
 }
 
+const tenMinutesInSeconds = 60 * 10;
+
+const headers = new Headers();
+headers.append('apikey', apiKey!);
+
 export const convertCurrency = async (
   currencyFrom: string,
   currencyTo: string,
@@ -22,12 +29,19 @@ export const convertCurrency = async (
 ): Promise<{ data: { result: number; rate: number } | null }> => {
   try {
     const response = await fetch(
-      `${apiUrl}/convert?apikey=${apiKey}&to=${currencyTo}&from=${currencyFrom}&amount=${amount}`
+      `${apiUrl}/convert?&to=${currencyTo}&from=${currencyFrom}&amount=${amount}`,
+      {
+        redirect: 'follow',
+        headers,
+        next: { revalidate: tenMinutesInSeconds },
+      }
     );
-    const data: convertResponse = await response.json();
+    const data: ConvertResponse = await response.json();
 
     return { data: { result: data.result, rate: data.info.rate } };
   } catch {
     return { data: null };
   }
 };
+
+export default convertCurrency;
