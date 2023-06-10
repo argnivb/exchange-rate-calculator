@@ -1,0 +1,351 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders Home page unchanged 1`] = `
+.c6 {
+  position: absolute;
+  bottom: -1.8rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #1E90FF;
+  color: #fff;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  border: 1px solid rgba(0,0,0,0);
+  border-radius: 30px;
+  outline: none;
+  font-family: fontFamily;
+  font-weight: 700;
+  font-size: 24px;
+  padding: 16px 32px;
+}
+
+.c6:hover {
+  background-color: #0066CC;
+}
+
+.c6:focus-visible {
+  outline: 1px solid #1E90FF;
+  outline-offset: 0.125rem;
+}
+
+.c6:active {
+  background-color: #1E90FF;
+}
+
+.c6:disabled {
+  background-color: #aaaaaa;
+}
+
+.c6:disabled,
+.c6:disabled:hover {
+  cursor: default;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c3 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-radius: 30px;
+  padding: 32px;
+  padding-bottom: 64px;
+  margin-bottom: 128px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 12px #D8EBFF;
+  max-width: 374px;
+}
+
+.c4 {
+  font-family: fontFamily;
+  font-weight: 700;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.c5 {
+  font-family: fontFamily;
+  font-weight: 700;
+  font-size: 24px;
+  background-color: #fff;
+  outline: none;
+  border: 1px solid #e5e5e5;
+  border-radius: 30px;
+  padding: 16px 32px;
+  width: 100%;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.c5:focus-visible {
+  border-color: #1E90FF;
+}
+
+.c5::-webkit-inner-spin-button,
+.c5::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 64px;
+  padding-top: 64px;
+}
+
+.c1 {
+  font-family: fontFamily;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+}
+
+<div>
+  <main
+    class="c0"
+  >
+    <h1
+      class="c1"
+    >
+      Exchange Rate Calculator
+    </h1>
+    <div
+      class="c2"
+      data-testid="exchange-rate-calculator"
+    >
+      <form
+        autocomplete="off"
+      >
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <div
+              class=" css-b62m3t-container"
+            >
+              <span
+                class="css-1f43avz-a11yText-A11yText"
+                id="react-select-currencyFrom-live-region"
+              />
+              <span
+                aria-atomic="false"
+                aria-live="polite"
+                aria-relevant="additions text"
+                class="css-1f43avz-a11yText-A11yText"
+              />
+              <div
+                class=" css-1w3owpa-control"
+              >
+                <div
+                  class=" css-1fdsijx-ValueContainer"
+                >
+                  <div
+                    class=" css-1dimb5e-singleValue"
+                  >
+                    USD
+                  </div>
+                  <div
+                    class=" css-qbdosj-Input"
+                    data-value=""
+                  >
+                    <input
+                      aria-autocomplete="list"
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      autocapitalize="none"
+                      autocomplete="off"
+                      autocorrect="off"
+                      class=""
+                      id="currencyFrom"
+                      role="combobox"
+                      spellcheck="false"
+                      style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                      tabindex="0"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <div
+                  class=" css-1hb7zxy-IndicatorsContainer"
+                >
+                  <span
+                    class=" css-1xjgjl1-IndicatorSeparator"
+                  />
+                  <div
+                    aria-hidden="true"
+                    class=" css-1xc3v61-indicatorContainer"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="css-tj5bde-Svg"
+                      focusable="false"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      width="20"
+                    >
+                      <path
+                        d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <input
+                name="currencyFrom"
+                type="hidden"
+                value="USD"
+              />
+            </div>
+            <span>
+              to
+            </span>
+            <div
+              class=" css-b62m3t-container"
+            >
+              <span
+                class="css-1f43avz-a11yText-A11yText"
+                id="react-select-currencyTo-live-region"
+              />
+              <span
+                aria-atomic="false"
+                aria-live="polite"
+                aria-relevant="additions text"
+                class="css-1f43avz-a11yText-A11yText"
+              />
+              <div
+                class=" css-1w3owpa-control"
+              >
+                <div
+                  class=" css-1fdsijx-ValueContainer"
+                >
+                  <div
+                    class=" css-1dimb5e-singleValue"
+                  >
+                    EUR
+                  </div>
+                  <div
+                    class=" css-qbdosj-Input"
+                    data-value=""
+                  >
+                    <input
+                      aria-autocomplete="list"
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      autocapitalize="none"
+                      autocomplete="off"
+                      autocorrect="off"
+                      class=""
+                      id="currencyTo"
+                      role="combobox"
+                      spellcheck="false"
+                      style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+                      tabindex="0"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <div
+                  class=" css-1hb7zxy-IndicatorsContainer"
+                >
+                  <span
+                    class=" css-1xjgjl1-IndicatorSeparator"
+                  />
+                  <div
+                    aria-hidden="true"
+                    class=" css-1xc3v61-indicatorContainer"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="css-tj5bde-Svg"
+                      focusable="false"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      width="20"
+                    >
+                      <path
+                        d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <input
+                name="currencyTo"
+                type="hidden"
+                value="EUR"
+              />
+            </div>
+          </div>
+          <input
+            class="c5"
+            name="amount"
+            placeholder="Amount"
+            step="0.01"
+            type="number"
+          />
+          <button
+            class="c6"
+            disabled=""
+            type="submit"
+          >
+            Convert
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>
+`;
